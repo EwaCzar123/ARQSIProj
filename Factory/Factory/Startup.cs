@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FactoryApi.Data;
+using FactoryApi.Data.Repositories;
+using FactoryApi.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -26,10 +30,18 @@ namespace Factory
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContext<FabricContext>(options =>
+              options.UseSqlServer(Configuration.GetConnectionString("FabricContext")));
+
+            services.AddScoped<FabricDataInitializer>();
+
+            services.AddScoped<IMachineRepository, MachineRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, FabricDataInitializer fabricDataInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -43,6 +55,9 @@ namespace Factory
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            fabricDataInitializer.InitializeData();
+            
         }
     }
 }
