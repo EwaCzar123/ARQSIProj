@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FactoryApi.Value_objects
+using FactoryApi.Models;
 
 namespace FactoryApi.Models
 {
@@ -10,9 +10,9 @@ namespace FactoryApi.Models
     {
         public int id { get; set; }
 
-        public string name { get; set; }
+     //   public string name { get; set; }
 
-        public string surname { get; set; }
+     // public string surname { get; set; }
         
 
     }

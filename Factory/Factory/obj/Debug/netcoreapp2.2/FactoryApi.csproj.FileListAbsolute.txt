@@ -42,3 +42,11 @@ C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\Fa
 C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.RazorTargetAssemblyInfo.cache
 C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.dll
 C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.pdb
+D:\PortoStudies\ARQSI\Git_repo\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.csprojAssemblyReference.cache
+D:\PortoStudies\ARQSI\Git_repo\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.csproj.CoreCompileInputs.cache
+D:\PortoStudies\ARQSI\Git_repo\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.RazorAssemblyInfo.cache
+D:\PortoStudies\ARQSI\Git_repo\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.RazorAssemblyInfo.cs
+D:\PortoStudies\ARQSI\Git_repo\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.AssemblyInfoInputs.cache
+D:\PortoStudies\ARQSI\Git_repo\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.AssemblyInfo.cs
+D:\PortoStudies\ARQSI\Git_repo\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.dll
+D:\PortoStudies\ARQSI\Git_repo\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.pdb
