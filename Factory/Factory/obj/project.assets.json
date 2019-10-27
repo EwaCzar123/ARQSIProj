@@ -8221,6 +8221,7 @@
       "path": "runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8234,6 +8235,7 @@
       "path": "runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8827,7 +8829,6 @@
       "path": "system.composition.convention/1.0.31",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.Convention.dll",
@@ -8870,7 +8871,6 @@
       "path": "system.composition.typedparts/1.0.31",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.TypedParts.dll",
@@ -10641,6 +10641,7 @@
       "path": "system.reflection.emit.lightweight/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11912,6 +11913,7 @@
       "path": "system.security.principal/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12494,7 +12496,6 @@
       "path": "system.threading.tasks.parallel/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12892,6 +12893,7 @@
       "path": "system.xml.xpath.xdocument/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12934,23 +12936,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\Dawd\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\ARQSIProj\\Factory\\Factory\\FactoryApi.csproj",
+      "projectUniqueName": "D:\\PortoStudies\\ARQSI\\Git_repo2\\Factory\\Factory\\FactoryApi.csproj",
       "projectName": "FactoryApi",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\ARQSIProj\\Factory\\Factory\\FactoryApi.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\ARQSIProj\\Factory\\Factory\\obj\\",
+      "projectPath": "D:\\PortoStudies\\ARQSI\\Git_repo2\\Factory\\Factory\\FactoryApi.csproj",
+      "packagesPath": "C:\\Users\\Dawd\\.nuget\\packages\\",
+      "outputPath": "D:\\PortoStudies\\ARQSI\\Git_repo2\\Factory\\Factory\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dawd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
