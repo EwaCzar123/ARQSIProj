@@ -28,3 +28,17 @@ C:\Users\Admin\source\repos\ARQSIProj3\Factory\Factory\obj\Debug\netcoreapp2.2\F
 C:\Users\Admin\source\repos\ARQSIProj3\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.RazorTargetAssemblyInfo.cache
 C:\Users\Admin\source\repos\ARQSIProj3\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.dll
 C:\Users\Admin\source\repos\ARQSIProj3\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.pdb
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\bin\Debug\netcoreapp2.2\FactoryApi.deps.json
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\bin\Debug\netcoreapp2.2\FactoryApi.runtimeconfig.json
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\bin\Debug\netcoreapp2.2\FactoryApi.runtimeconfig.dev.json
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\bin\Debug\netcoreapp2.2\FactoryApi.dll
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\bin\Debug\netcoreapp2.2\FactoryApi.pdb
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.csprojAssemblyReference.cache
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.RazorAssemblyInfo.cache
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.RazorAssemblyInfo.cs
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.AssemblyInfoInputs.cache
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.AssemblyInfo.cs
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.RazorTargetAssemblyInfo.cache
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.dll
+C:\Users\Admin\Source\Repos\ARQSIProj\Factory\Factory\obj\Debug\netcoreapp2.2\FactoryApi.pdb

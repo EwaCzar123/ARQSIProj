@@ -40,6 +40,7 @@ namespace Factory
             services.AddScoped<IOperationRepository, OperationRepository>();
             services.AddScoped<IProductionLineRepository, ProductionLineRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

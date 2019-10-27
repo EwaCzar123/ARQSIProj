@@ -25,5 +25,6 @@ namespace FactoryApi.Data
         public DbSet<Operation> Operations { get; set; }
         public DbSet<ProductionLine> ProductionLines { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }
