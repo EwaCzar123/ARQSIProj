@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FactoryApi.Data.Repositories
 {
-    public class OperationRepository: IOperationRepository
+    public class OperationRepository : IOperationRepository
     {
         private readonly FabricContext _context;
         private readonly DbSet<Operation> _operations;
