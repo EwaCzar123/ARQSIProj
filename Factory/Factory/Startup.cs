@@ -37,6 +37,8 @@ namespace Factory
             services.AddScoped<FabricDataInitializer>();
 
             services.AddScoped<IMachineRepository, MachineRepository>();
+            services.AddScoped<IOperationRepository, OperationRepository>();
+            services.AddScoped<IProductionLineRepository, ProductionLineRepository>();
 
         }
 

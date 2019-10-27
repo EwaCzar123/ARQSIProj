@@ -1,73 +1,68 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using FactoryApi.Models;
+using Microsoft.AspNetCore.Mvc;
 
-//namespace FactoryApi.Controllers
-//{
-//    [Route("api/[controller]")]
-//    [ApiController]
-//    public class FolderController : ControllerBase
-//    {
-//        private readonly IFolderRepository _folderRepository;
-//        public FolderController(IFolderRepository context)
-//        {
-//            _folderRepository = context;
-//        }
+namespace FactoryApi.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class MachineTypeController : ControllerBase
+    {
+        private readonly IMachineTypeRepository _machineTypeRepository;
+        public MachineTypeController(IMachineTypeRepository context)
+        {
+            _machineTypeRepository = context;
+        }
 
-//        [HttpGet]
-//        public IEnumerable<Folder> GetFolders()
-//        {
-//            return _folderRepository.GetAll();
-//        }
+        [HttpGet]
+        public IEnumerable<MachineType> GetMachineType()
+        {
+            return _machineTypeRepository.GetAll();
+        }
 
-//        [HttpGet("{id}")]
-//        public ActionResult<Folder> GetFolder(int id)
-//        {
-//            Folder folder = _folderRepository.GetBy(id);
-//            if (folder == null) return NotFound();
-//            return folder;
-//        }
+        [HttpGet("{id}")]
+        public ActionResult<MachineType> GetMachineType(int id)
+        {
+            MachineType machineType = _machineTypeRepository.GetBy(id);
+            if (machineType == null) return NotFound();
+            return machineType;
+        }
 
-//        [HttpGet("{userId},{parent}")]
-//        public IEnumerable<Folder> getFolderWitchCorrectParent(int userId, int parent)
-//        {
-//            return _folderRepository.GetAll().Where(f => f.UserId == userId && f.Parent == parent);
-//        }
+        [HttpPost]
+        public ActionResult<MachineType> PostFolder(MachineType machineType)
+        {
+            _machineTypeRepository.Add(machineType);
+            _machineTypeRepository.SaveChanges();
 
-//        [HttpPost]
-//        public ActionResult<Folder> PostFolder(Folder folder)
-//        {
-//            _folderRepository.Add(folder);
-//            _folderRepository.SaveChanges();
+            return CreatedAtAction(nameof(GetMachineType), new { id = machineType.Id }, machineType);
+        }
 
-//            return CreatedAtAction(nameof(GetFolder), new { id = folder.Id }, folder);
-//        }
+        [HttpPut("{id}")]
+        public IActionResult PutMachineType(int id, MachineType machineType)
+        {
+            if (id != machineType.Id)
+            {   
+                return BadRequest();
+            }
+            _machineTypeRepository.Update(machineType);
+            _machineTypeRepository.SaveChanges();
+            return NoContent();
+        }
 
-//        [HttpPut("{id}")]
-//        public IActionResult PutFolder(int id, Folder folder)
-//        {
-//            if (id != folder.Id)
-//            {
-//                return BadRequest();
-//            }
-//            _folderRepository.Update(folder);
-//            _folderRepository.SaveChanges();
-//            return NoContent();
-//        }
-
-//        [HttpDelete("{id}")]
-//        public ActionResult<Folder> DeleteFolder(int id)
-//        {
-//            Folder folder = _folderRepository.GetBy(id);
-//            if (folder == null)
-//            {
-//                return NotFound();
-//            }
-//            _folderRepository.Delete(folder);
-//            _folderRepository.SaveChanges();
-//            return folder;
-//        }
-//    }
-//}
+        [HttpDelete("{id}")]
+        public ActionResult<MachineType> DeleteMachineType(int id)
+        {
+            MachineType machineType = _machineTypeRepository.GetBy(id);
+            if (machineType == null)
+            {
+                return NotFound();
+            }
+            _machineTypeRepository.Delete(machineType);
+            _machineTypeRepository.SaveChanges();
+            return machineType;
+        }
+    }
+}

@@ -23,6 +23,7 @@ namespace FactoryApi.Data
         public DbSet<MachineType> MachineTypes { get; set; }
 
         public DbSet<Operation> Operations { get; set; }
+        public DbSet<ProductionLine> ProductionLines { get; set; }
 
     }
 }
