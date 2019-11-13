@@ -1,4 +1,5 @@
 ﻿using FactoryApi.Models;
+using FactoryFabricApi.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,22 @@ namespace FactoryApi.Data
                 .HasMany(a => a.Machines)
                 .WithOne();
 
+            builder.Entity<ProductionLine>()
+                .HasMany(p => p.Machines)
+                .WithOne();
+
+            builder.Entity<MachineTypeOperation>()
+            .HasKey(t => new { t.MachineTypeId, t.OperationId });
+
+            //builder.Entity<MachineTypeOperation>()
+            //.HasOne(pt => pt.MachineType)
+            //.WithMany(p => p.Operations)
+            //.HasForeignKey(pt => pt.MachineTypeId);
+
+            //builder.Entity<MachineTypeOperation>()
+            //    .HasOne(pt => pt.Operation)
+            //    .WithMany(t => t.MachineType)
+            //    .HasForeignKey(pt => pt.OperationId);
 
             //value objects
             builder.Entity<Machine>().OwnsOne(m => m.Position);

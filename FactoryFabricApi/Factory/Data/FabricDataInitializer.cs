@@ -21,19 +21,30 @@ namespace FactoryApi.Data
             _dbContext.Database.EnsureDeleted();
             if (_dbContext.Database.EnsureCreated())
             {
-                MachineType type1 = new MachineType();
-                _dbContext.MachineTypes.Add(type1);
+                MachineType machineType1 = new MachineType();
+                _dbContext.MachineTypes.Add(machineType1);
+
+                ProductionLine pl = new ProductionLine("Line A");
+                _dbContext.ProductionLines.Add(pl);
 
                 Description desc1 = new Description();
-                type1.Descritipion = desc1;
+                machineType1.Descritipion = desc1;
 
-                Machine machine1 = new Machine(type1.Id);
+                Machine machine1 = new Machine(machineType1.Id, pl.Id);
+                _dbContext.Machines.Add(machine1);
 
-                type1.Machines.Add(machine1);
+                machineType1.Machines.Add(machine1);
 
                 Position pos1 = new Position();
 
                 machine1.Position = pos1;
+
+                Operation op = new Operation();
+                Duration dur = new Duration();
+
+                op.Duration = dur;
+
+                _dbContext.Operations.Add(op);
                 
                 
                 

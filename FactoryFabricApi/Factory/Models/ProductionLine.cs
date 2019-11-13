@@ -9,5 +9,12 @@ namespace FactoryApi.Models
     {
         public int Id { get; set; }
         public ICollection<Machine> Machines { get; set; }
+
+        public String Name { get; set; }
+
+        public ProductionLine(String name)
+        {
+            Name = name;
+        }
     }
 }

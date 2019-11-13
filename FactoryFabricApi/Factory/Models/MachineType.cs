@@ -1,4 +1,5 @@
 ﻿using FactoryApi.Value_objects;
+using FactoryFabricApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,14 @@ namespace FactoryApi.Models
         public int Id { get; set; }
         public ICollection<Operation> Operations { get; set; }
         public ICollection<Machine> Machines { get; set; }
-        
+
+        public ICollection<MachineTypeOperation> MachineTypeOperations {get;set;}
 
         public Description Descritipion { get; set; }
 
         public MachineType()
         {
-            this.Machines = new List<Machine>();
+            Machines = new List<Machine>();
         }
 
     }
