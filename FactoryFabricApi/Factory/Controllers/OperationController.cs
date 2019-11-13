@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FactoryApi.Models;
+using FactoryFabricApi.DTO_s;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FactoryApi.Controllers
@@ -33,8 +34,10 @@ namespace FactoryApi.Controllers
 
 
         [HttpPost]
-        public ActionResult<Operation> PostOperation(Operation operation)
+        public ActionResult<Operation> PostOperation(OperationDTO DTO)
         {
+            Operation operation = new Operation();
+            operation.Duration = DTO.Duration;
             _operationRepository.Add(operation);
             _operationRepository.SaveChanges();
 
@@ -42,12 +45,14 @@ namespace FactoryApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult PutOperation(int id, Operation operation)
+        public IActionResult PutOperation(int id, OperationDTO DTO)
         {
-            if (id != operation.Id)
+            if (id != _operationRepository.GetBy(id).Id)
             {
                 return BadRequest();
             }
+            Operation operation = new Operation();
+            operation.Duration = DTO.Duration;
             _operationRepository.Update(operation);
             _operationRepository.SaveChanges();
             return NoContent();

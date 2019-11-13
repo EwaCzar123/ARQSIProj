@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FactoryApi.Models;
+using FactoryFabricApi.DTO_s;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FactoryApi.Controllers
@@ -32,8 +33,12 @@ namespace FactoryApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult<MachineType> PostFolder(MachineType machineType)
+        public ActionResult<MachineType> PostFolder(MachineTypeDTO DTO)
         {
+            MachineType machineType = new MachineType();
+            machineType.Machines = DTO.Machines;
+            machineType.MachineTypeOperations = DTO.MachineTypeOperations;
+            machineType.Operations = DTO.Operations;
             _machineTypeRepository.Add(machineType);
             _machineTypeRepository.SaveChanges();
 
@@ -41,12 +46,16 @@ namespace FactoryApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult PutMachineType(int id, MachineType machineType)
+        public IActionResult PutMachineType(int id, MachineTypeDTO DTO)
         {
-            if (id != machineType.Id)
+            if (id != _machineTypeRepository.GetBy(id).Id)
             {   
                 return BadRequest();
             }
+            MachineType machineType = new MachineType();
+            machineType.Machines = DTO.Machines;
+            machineType.MachineTypeOperations = DTO.MachineTypeOperations;
+            machineType.Operations = DTO.Operations;
             _machineTypeRepository.Update(machineType);
             _machineTypeRepository.SaveChanges();
             return NoContent();

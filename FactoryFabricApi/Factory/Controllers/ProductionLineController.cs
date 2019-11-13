@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FactoryApi.Models;
+using FactoryFabricApi.DTO_s;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FactoryApi.Controllers
@@ -33,8 +34,10 @@ namespace FactoryApi.Controllers
 
 
         [HttpPost]
-        public ActionResult<ProductionLine> PostProductionLine(ProductionLine productionLine)
+        public ActionResult<ProductionLine> PostProductionLine(ProductionLineDTO DTO)
         {
+            ProductionLine productionLine = new ProductionLine(DTO.Name);
+            productionLine.Machines = DTO.Machines;
             _productionLineRepository.Add(productionLine);
             _productionLineRepository.SaveChanges();
 
@@ -42,12 +45,14 @@ namespace FactoryApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult PutProductionLine(int id, ProductionLine productionLine)
+        public IActionResult PutProductionLine(int id, ProductionLineDTO DTO)
         {
-            if (id != productionLine.Id)
+            if (id != _productionLineRepository.GetBy(id).Id)
             {
                 return BadRequest();
             }
+            ProductionLine productionLine = new ProductionLine(DTO.Name);
+            productionLine.Machines = DTO.Machines;
             _productionLineRepository.Update(productionLine);
             _productionLineRepository.SaveChanges();
             return NoContent();
