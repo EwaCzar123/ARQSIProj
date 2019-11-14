@@ -30,6 +30,11 @@ namespace FactoryApi.Data
                 Description desc1 = new Description();
                 machineType1.Descritipion = desc1;
 
+                MachineType mt2 = new MachineType();
+                Description desc2 = new Description();
+                mt2.Descritipion = desc2;
+                _dbContext.MachineTypes.Add(mt2);
+
                 Machine machine1 = new Machine(machineType1.Id, pl.Id);
                 _dbContext.Machines.Add(machine1);
 
