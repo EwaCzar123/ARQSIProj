@@ -15,10 +15,6 @@ let beltSize1 = {x: 2, y: 1, z: 25};
 let beltPosition1 = {x: 5.4, y: 0.7, z: -2};
 let beltSize2 = {x: 2, y: 1, z: 25};
 let beltPosition2 = {x: -2.2, y: 0.7, z: -2};
-let beltSizeHorizontal = {x: 2, y: 1, z: 5.6};
-let beltPositionHorizontal = {x: 1.6, y: 0.7, z: -13.5};
-let beltSize4 = {x: 2, y: 1, z: 4};
-let beltPosition4 = {x: 1.6, y: 0.7, z: -16.5};
 
 scene = init();
 animate();
@@ -30,8 +26,6 @@ createMachine(scene, machinePosition3, 'assets/Machine/', 'machine.mtl', 'machin
 createFactory(scene, factoryPosition, 'assets/Factory/', 'factory.mtl', 'factory.obj');
 createBelt(scene, beltSize1, beltPosition1);
 createBelt(scene, beltSize2, beltPosition2);
-createBelt(scene, beltSizeHorizontal, beltPositionHorizontal, Math.PI / 2);
-createBelt(scene, beltSize4, beltPosition4);
 
 function init() {
     scene = new THREE.Scene();
