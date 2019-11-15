@@ -18,6 +18,11 @@ export default function ImportObj(scene, objectPosition, path, mtlFileName, objF
                     object.translateX(objectPosition.x);
                     object.translateY(objectPosition.y);
                     object.translateZ(objectPosition.z);
+
+                    if(!(objectPosition.a == undefined)) {
+                        object.rotateY(objectPosition.a);
+                    }
+                    
                     scene.add(object);
 
                 }, THREE.onProgress, THREE.onError);

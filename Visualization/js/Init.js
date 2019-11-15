@@ -3,7 +3,9 @@ import createFloor from "./Floor.js";
 import createFactory from "./Factory.js";
 
 let camera, scene, renderer, controls;
-let machinePosition = {x: 3, y: 0.7, z: 0};
+let machinePosition1 = {x: 8, y: 0.7, z: 0};
+let machinePosition2 = {x: 8, y: 0.7, z: 5};
+let machinePosition3 = {x: -5, y: 0.7, z: 5, a: Math.PI};
 let factoryPosition = {x: 0, y: 0, z: 0};
 
 
@@ -11,7 +13,9 @@ scene = init();
 animate();
 
 
-createMachine(scene, machinePosition, 'assets/Machine/', 'machine.mtl', 'machine.obj');
+createMachine(scene, machinePosition1, 'assets/Machine/', 'machine.mtl', 'machine.obj');
+createMachine(scene, machinePosition2, 'assets/Machine/', 'machine.mtl', 'machine.obj');
+createMachine(scene, machinePosition3, 'assets/Machine/', 'machine.mtl', 'machine.obj');
 createFactory(scene, factoryPosition, 'assets/Factory/', 'factory.mtl', 'factory.obj');
 
 function init() {
@@ -23,6 +27,8 @@ function init() {
     camera.lookAt(scene.position);
     scene.add(camera);
     scene.add(createFloor({width: 100}, 0, 0, 0, THREE.Math.degToRad(-90)));
+
+    
     
 
 
