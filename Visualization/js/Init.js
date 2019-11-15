@@ -1,13 +1,20 @@
 import createMachine from "./Machine.js";
 import createFloor from "./Floor.js";
 import createFactory from "./Factory.js";
+import createBelt from "./Belt.js";
 
 let camera, scene, renderer, controls;
+
 let machinePosition1 = {x: 8, y: 0.7, z: 0};
 let machinePosition2 = {x: 8, y: 0.7, z: 5};
 let machinePosition3 = {x: -5, y: 0.7, z: 5, a: Math.PI};
+
 let factoryPosition = {x: 0, y: 0, z: 0};
 
+let beltSize1 = {x: 2, y: 1, z: 15};
+let beltPosition1 = {x: 5.4, y: 0.7, z: 4};
+let beltSize2 = {x: 2, y: 1, z: 15};
+let beltPosition2 = {x: -2.2, y: 0.7, z: 4};
 
 scene = init();
 animate();
@@ -17,6 +24,8 @@ createMachine(scene, machinePosition1, 'assets/Machine/', 'machine.mtl', 'machin
 createMachine(scene, machinePosition2, 'assets/Machine/', 'machine.mtl', 'machine.obj');
 createMachine(scene, machinePosition3, 'assets/Machine/', 'machine.mtl', 'machine.obj');
 createFactory(scene, factoryPosition, 'assets/Factory/', 'factory.mtl', 'factory.obj');
+createBelt(scene, beltSize1, beltPosition1);
+createBelt(scene, beltSize2, beltPosition2);
 
 function init() {
     scene = new THREE.Scene();

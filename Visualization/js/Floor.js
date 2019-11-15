@@ -5,7 +5,7 @@ export default function createFloor(buildingOpts, transX, transY, transZ, rotX) 
 
     let texture = THREE.ImageUtils.loadTexture("./assets/floor.jpg");
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set(10, 10);
+    texture.repeat.set(30, 30);
 
     let material = new THREE.MeshLambertMaterial({
         map: texture
