@@ -14,7 +14,7 @@ export default function createBelt(scene, beltSize, beltPos, rotX) {
     belt.translateY(beltPos.y);
     belt.translateZ(beltPos.z);
     if(!(rotX == undefined)) {
-        belt.rotateX(rotX);
+        belt.rotateY(rotX);
     }
     
     scene.add(belt)
