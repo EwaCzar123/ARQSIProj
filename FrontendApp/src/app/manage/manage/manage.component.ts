@@ -7,8 +7,6 @@ import { MachineService } from 'src/app/service/machine.service';
   styleUrls: ['./manage.component.css']
 })
 export class ManageComponent {
-
-
   
   public apiUrl = "def";
 

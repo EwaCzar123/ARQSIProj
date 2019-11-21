@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:44387/api'
+  apiUrl: 'https://5dd67693ce4c300014403955.mockapi.io/mdf/'
 };
 
 /*
