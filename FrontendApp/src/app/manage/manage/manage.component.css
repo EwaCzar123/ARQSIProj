@@ -1,8 +1,34 @@
-.sideNav {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #eee;
+.sideNavContainer {
+    height: 100%;
+    
+  }
+  
+  .sideNavContent {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+
+  .sideNavUl {
+      padding-left: 0;
+      text-align: center;
+  }
+
+  .sideNavLi {
+      padding-left: 0.5em;
+      padding-top: 0.5em;
+      padding-right: 0.5em;
+      padding-bottom: 0.5em;
+      list-style: none;
+      cursor: pointer;
+      
+  }
+
+  .sideNavLi:hover {
+    background-color: rgb(219, 219, 219);
   }
