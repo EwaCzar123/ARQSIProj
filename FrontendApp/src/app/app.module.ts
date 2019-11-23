@@ -8,7 +8,10 @@ import { ManageComponent } from './manage/manage/manage.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatToolbarModule, MatSidenavModule  } from '@angular/material';
+import { MatToolbarModule, MatSidenavModule, MatListModule, MatCardModule } from '@angular/material';
+import { MachineOverviewComponent } from './manage/machine-overview/machine-overview.component';
+import { HttpClientModule } from "@angular/common/http";
+import { MachineDetailComponent } from './manage/machine-detail/machine-detail.component'
 
 
 const appRoutes: Routes = [
@@ -31,11 +34,16 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
+    HttpClientModule,
+    MatListModule,
+    MatCardModule
   ],
   declarations: [
     AppComponent,
     ManageComponent,
-    NavbarComponent
+    NavbarComponent,
+    MachineOverviewComponent,
+    MachineDetailComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

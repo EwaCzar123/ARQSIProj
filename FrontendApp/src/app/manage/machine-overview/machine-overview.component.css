@@ -1,0 +1,21 @@
+.listItem {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.listItem :hover {
+    background-color: rgb(219, 219, 219);
+}
+
+.listItemDiv {
+    cursor: pointer;
+    padding-bottom: 0.5;
+    border: solid 0.1em rgb(240, 237, 237);
+}
+
+.matTitle {
+    margin: 0%;
+    text-align: center;
+    border: solid 0.1em rgb(240, 237, 237);
+}

@@ -10,15 +10,8 @@ export class ManageComponent {
   
   public apiUrl = "def";
 
-  constructor(public ms: MachineService) { 
+  constructor(private ms: MachineService) { 
     this.apiUrl = this.ms.getEnvironment();
-    
   }
-
-  ngOnInit() {
-    
-    
-  }
-
 
 }
