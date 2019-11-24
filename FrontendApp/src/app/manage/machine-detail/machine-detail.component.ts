@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Machine } from 'src/app/model/machine';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-machine-detail',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./machine-detail.component.css']
 })
 export class MachineDetailComponent implements OnInit {
+  public machineFormGroup: FormGroup;
 
-  constructor() { }
+  @Input() machineDetail: Machine; 
+
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+    this.machineFormGroup = new FormGroup({
+      position: new FormControl(),
+      machineType: new FormControl()
+    })
+  }
+
+  onSubmit() {
+
   }
 
 }

@@ -1,29 +1,36 @@
 <mat-drawer-container class="sideNavContainer">
   <mat-drawer class="sideNavDrawer" opened mode="side">
     <ul class="sideNavUl">
-      <li class="sideNavLi">
+      <li class="sideNavLi" (click)="showOverviewClick(1)">
         machines
       </li>
-      <li class="sideNavLi">
+      <li class="sideNavLi" (click)="showOverviewClick(2)">
         machine types
       </li>
-      <li class="sideNavLi">
+      <li class="sideNavLi" (click)="showOverviewClick(3)">
+            operations
+          </li>
+      <li class="sideNavLi" (click)="showOverviewClick(4)">
         products
       </li>
       <li class="sideNavLi">
         plan of production
       </li>
+      
     </ul>
   </mat-drawer>
 
   <mat-drawer-content class="sideNavContent">
     <div class="fullSize row">
       <div class="col-2" style="padding: 0%;">
-        <app-machine-overview>
+        <app-machine-overview *ngIf="showOverview=='machineOverview'" (showDetailMachine)="showDetailMachine($event)">
         </app-machine-overview>
+        <app-machine-type-overview *ngIf="showOverview=='machineTypeOverview'"></app-machine-type-overview>
+        <app-operation-overview *ngIf="showOverview=='operationOverview'"></app-operation-overview>
+        <app-product-overview *ngIf="showOverview=='productOverview'"></app-product-overview>
       </div>
       <div class="col-10" style="padding: 0%;">
-      <app-machine-detail>
+      <app-machine-detail *ngIf=showMachineDetail [machineDetail]="machine">
       </app-machine-detail>
     </div>
     </div>

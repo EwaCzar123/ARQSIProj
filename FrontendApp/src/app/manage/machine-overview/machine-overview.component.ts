@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MachineService } from 'src/app/service/machine.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { Machine } from 'src/app/model/machine';
@@ -12,26 +12,27 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./machine-overview.component.css']
 })
 export class MachineOverviewComponent implements OnInit {
-  listMachines: Machine[];
-  listMachines$: BehaviorSubject<Machine>; 
-  lijst$: Observable<Machine[]>;
-  destroy$ = new Subject();
+  listMachines$: Observable<Machine[]>;
+  @Output() showDetailMachine = new EventEmitter<Machine>();
   
   constructor(public machineService: MachineService,private route: ActivatedRoute) {
-    
+    this.machineService.getMachines().subscribe(res => {
+          this.listMachines$ = of(res);
+        })
    }
 
    ngOnInit(): void {
         // this.lijst$ = this.machineService.machines$;
 
-        this.machineService.getMachines().subscribe(res => {
-          this.lijst$ = of(res);
-        })
+        
+  }
+
+  showDetail(machine: Machine) {
+    this.showDetailMachine.emit(machine);
   }
   
   logButtonClicked() {
     console.log(this.machineService.machines[0].id);
-    this.listMachines = this.machineService.machines;
   }
 
 }

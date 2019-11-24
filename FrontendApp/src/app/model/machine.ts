@@ -1,3 +1,5 @@
+import { MachineType } from './machine-type';
+
 export class Machine {
     
     private _id: number;
@@ -5,11 +7,15 @@ export class Machine {
     constructor
     (
         private _position: string,
+        private _machineType: MachineType,
         //private _machineType: number, 
     ) {}
 
     
 
+    get machineType(): MachineType {
+        return this._machineType;
+    }
     get position(): string {
         return this._position;
     }
@@ -18,7 +24,7 @@ export class Machine {
     }
 
     static fromJSON(json: any): Machine {
-        const machine = new Machine(json.position);
+        const machine = new Machine(json.position, json.machineType.map(MachineType.fromJSON));
         machine._id = json.id;
         return machine;
     }

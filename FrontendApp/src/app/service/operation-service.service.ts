@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
+import { Operation } from '../model/operation';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { tap, mapTo, map } from 'rxjs/operators';
-import { Observable } from 'rxjs/internal/Observable';
-import { Machine } from '../model/machine';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MachineService {
+export class OperationServiceService {
 
   headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
 
-  public machines: Machine[] = [];
+  public machines: Operation[] = [];
   private _machines$ = new BehaviorSubject([]);
-  machines$: Observable<Machine[]> = this._machines$.asObservable();
+  machines$: Observable<Operation[]> = this._machines$.asObservable();
   
   constructor(private http: HttpClient) { }
 
-  getMachines(): Observable<Machine[]> {
-    console.log(`${this.url}/machine`);
-    return this.http.get<Machine[]>(`${this.url}/machine`).pipe(
+  getMachines(): Observable<Operation[]> {
+    console.log(`${this.url}/operation`);
+    return this.http.get<Operation[]>(`${this.url}/operation`).pipe(
       tap(runs => {
         console.log("got here");
         this.machines = runs;
@@ -35,7 +34,4 @@ export class MachineService {
   getEnvironment(): string {
     return this.url;
   }
-
- 
-
 }
