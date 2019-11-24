@@ -1,1 +1,24 @@
-<p>product-detail works!</p>
+<mat-card class="detailCard">
+        <form  [formGroup]="productFormGroup" (ngSubmit)='onSubmit()'>
+          <div ng-repeat="4">
+            <div class="container">
+              <div class="row centerContent">
+                <div class="col-12">
+                  <p>
+                    <mat-form-field appearance="legacy" style="width: 100%;">
+                      <p>description:</p>
+                      <input matInput aria-label="title" value={{this.productDetail.description}} type="tekst" formControlName="description" required
+                        style="width: 100%;">
+                    </mat-form-field>
+                  </p>
+                  <button style="float: right;">Save</button>
+                </div>
+              </div>
+            </div>
+            <div style="height: 10px;">
+              <span style="width: 100%; height: 10px;"></span>
+            </div>
+          </div>
+        </form>
+      </mat-card>
+      

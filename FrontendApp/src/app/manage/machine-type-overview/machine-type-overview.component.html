@@ -2,7 +2,7 @@
   <mat-card style="padding: 0%;">
     <mat-card-title class="matTitle">MachineTypes</mat-card-title>
     <mat-list-item class="listItem" *ngFor="let element of listMachineTypes$ | async">
-      <div class="listItemDiv">
+      <div class="listItemDiv" (click)="showDetail(element)">
         <span>{{element.id}}</span>
       </div>
     </mat-list-item>

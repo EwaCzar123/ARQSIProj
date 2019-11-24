@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MachineTypeServiceService } from 'src/app/service/machine-type-service.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { MachineType } from 'src/app/model/machine-type';
@@ -12,6 +12,7 @@ import { of } from 'rxjs/internal/observable/of';
 export class MachineTypeOverviewComponent implements OnInit {
   
   listMachineTypes$: Observable<MachineType[]>;
+  @Output() showDetailMachineType = new EventEmitter<MachineType>();
 
   ngOnInit(): void {
     console.log("hallo");
@@ -22,6 +23,10 @@ export class MachineTypeOverviewComponent implements OnInit {
     this.machineTypeService.getMachineTypes().subscribe(res => {
       this.listMachineTypes$ = of(res);
     })
+  }
+
+  showDetail(machineType: MachineType) {
+    this.showDetailMachineType.emit(machineType);
   }
  
 

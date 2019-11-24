@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { OperationServiceService } from 'src/app/service/operation-service.service';
 import { Operation } from 'src/app/model/operation';
 import { Observable } from 'rxjs/internal/Observable';
@@ -11,7 +11,7 @@ import { of } from 'rxjs/internal/observable/of';
 })
 export class OperationOverviewComponent implements OnInit {
   listOperations$: Observable<Operation[]>;
-
+  @Output() showDetailOperation = new EventEmitter<Operation>();
   constructor(public operationService: OperationServiceService) {
     this.operationService.getMachines().subscribe(res => {
       this.listOperations$ = of(res);
@@ -21,4 +21,7 @@ export class OperationOverviewComponent implements OnInit {
   ngOnInit() {
   }
 
+  showDetail(operation: Operation) {
+    this.showDetailOperation.emit(operation);
+  }
 }

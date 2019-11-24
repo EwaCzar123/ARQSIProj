@@ -22,17 +22,10 @@ export class MachineOverviewComponent implements OnInit {
    }
 
    ngOnInit(): void {
-        // this.lijst$ = this.machineService.machines$;
-
-        
   }
 
   showDetail(machine: Machine) {
     this.showDetailMachine.emit(machine);
-  }
-  
-  logButtonClicked() {
-    console.log(this.machineService.machines[0].id);
   }
 
 }

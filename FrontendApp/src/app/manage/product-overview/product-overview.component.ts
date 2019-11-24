@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { Observable } from 'rxjs/internal/Observable';
 import { ProductServiceService } from 'src/app/service/product-service.service';
@@ -11,7 +11,7 @@ import { of } from 'rxjs/internal/observable/of';
 })
 export class ProductOverviewComponent implements OnInit {
   listProducts$: Observable<Product[]>;
-
+  @Output() showDetailProduct = new EventEmitter<Product>();
   constructor(public productService: ProductServiceService) {
     console.log("construor");
     this.productService.getMachines().subscribe(res => {
@@ -20,6 +20,10 @@ export class ProductOverviewComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  showDetail(product: Product) {
+    this.showDetailProduct.emit(product);
   }
 
 }

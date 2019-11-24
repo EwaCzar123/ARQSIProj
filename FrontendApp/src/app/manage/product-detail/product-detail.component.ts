@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Product } from 'src/app/model/product';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
+  public productFormGroup: FormGroup;
+
+  @Input() productDetail: Product; 
+  
   constructor() { }
 
   ngOnInit() {
+    this.productFormGroup = new FormGroup({
+      description: new FormControl(),
+    })
   }
 
+  onSubmit() {
+    
+  }
 }

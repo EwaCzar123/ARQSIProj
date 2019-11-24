@@ -23,15 +23,16 @@
   <mat-drawer-content class="sideNavContent">
     <div class="fullSize row">
       <div class="col-2" style="padding: 0%;">
-        <app-machine-overview *ngIf="showOverview=='machineOverview'" (showDetailMachine)="showDetailMachine($event)">
-        </app-machine-overview>
-        <app-machine-type-overview *ngIf="showOverview=='machineTypeOverview'"></app-machine-type-overview>
-        <app-operation-overview *ngIf="showOverview=='operationOverview'"></app-operation-overview>
-        <app-product-overview *ngIf="showOverview=='productOverview'"></app-product-overview>
+        <app-machine-overview *ngIf="showOverview=='machineOverview'" (showDetailMachine)="showDetailMachine($event)"></app-machine-overview>
+        <app-machine-type-overview *ngIf="showOverview=='machineTypeOverview'" (showDetailMachineType)="showDetailMachineType($event)"></app-machine-type-overview>
+        <app-operation-overview *ngIf="showOverview=='operationOverview'" (showDetailOperation)="showDetailOperation($event)"></app-operation-overview>
+        <app-product-overview *ngIf="showOverview=='productOverview'" (showDetailProduct)="showDetailProduct($event)"></app-product-overview>
       </div>
       <div class="col-10" style="padding: 0%;">
-      <app-machine-detail *ngIf=showMachineDetail [machineDetail]="machine">
-      </app-machine-detail>
+      <app-machine-detail *ngIf=showMachineDetail [machineDetail]="machine"></app-machine-detail>
+      <app-machine-type-detail *ngIf="showMachineTypeDetail" [machineTypeDetail]="machineType"></app-machine-type-detail>
+      <app-operation-detail *ngIf="showOperationDetail" [operationDetail]="operation"></app-operation-detail>
+      <app-product-detail *ngIf="showProductDetail" [productDetail]="product"></app-product-detail>
     </div>
     </div>
 
