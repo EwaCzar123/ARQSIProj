@@ -24,4 +24,8 @@ export class OperationOverviewComponent implements OnInit {
   showDetail(operation: Operation) {
     this.showDetailOperation.emit(operation);
   }
+  showDetailNoEl() {
+    let newOp = new Operation("put duration here");
+    this.showDetailOperation.emit(newOp);
+  }
 }

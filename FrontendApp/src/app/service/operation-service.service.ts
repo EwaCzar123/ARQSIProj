@@ -34,4 +34,15 @@ export class OperationServiceService {
   getEnvironment(): string {
     return this.url;
   }
+
+  addOperation(machine: Operation): Observable<Operation> {
+    const body = {
+      id: machine.id,
+            duration: machine.duration
+    };
+    return this.http.post<Operation>(`${this.url}/operation`, body).pipe(tap(r => {
+      this.machines.push(r);
+      this._machines$.next(this.machines);
+    }));
+  }
 }

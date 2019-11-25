@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Operation } from 'src/app/model/operation';
+import { OperationServiceService } from 'src/app/service/operation-service.service';
 
 @Component({
   selector: 'app-operation-detail',
@@ -12,7 +13,7 @@ export class OperationDetailComponent implements OnInit {
 
   @Input() operationDetail: Operation; 
   
-  constructor() { }
+  constructor(private operationService: OperationServiceService) { }
 
   ngOnInit() {
     this.operationFormGroup = new FormGroup({
@@ -21,7 +22,11 @@ export class OperationDetailComponent implements OnInit {
   }
 
   onSubmit() {
-    
-  }
+    if(this.operationDetail.id == undefined) {
+      let machinee = new Operation(this.operationFormGroup.value.duration);
+    this.operationService.addOperation(machinee).subscribe(res => {
 
+    })
+  }
+  }
 }

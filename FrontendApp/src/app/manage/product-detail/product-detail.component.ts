@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ProductServiceService } from 'src/app/service/product-service.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,7 +14,7 @@ export class ProductDetailComponent implements OnInit {
 
   @Input() productDetail: Product; 
   
-  constructor() { }
+  constructor(private productService: ProductServiceService) { }
 
   ngOnInit() {
     this.productFormGroup = new FormGroup({
@@ -22,6 +23,11 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onSubmit() {
-    
+    if(this.productDetail.id == undefined) {
+      let machinee = new Product(this.productFormGroup.value.description);
+    this.productService.addProduct(machinee).subscribe(res => {
+
+    })
+  }
   }
 }

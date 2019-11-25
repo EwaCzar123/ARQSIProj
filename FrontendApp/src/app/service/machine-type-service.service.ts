@@ -34,4 +34,17 @@ export class MachineTypeServiceService {
   getEnvironment(): string {
     return this.url;
   }
+
+  addMachineType(machine: MachineType): Observable<MachineType> {
+    const body = {
+      id: machine.id,
+            machineId: machine.machineId,
+            operation: machine.operation
+    };
+    return this.http.post<MachineType>(`${this.url}machine/1/MachineType`, body).pipe(tap(r => {
+      this.machinesTypes.push(r);
+      this._machinesTypes$.next(this.machinesTypes);
+    }));
+  }
+
 }

@@ -5,6 +5,7 @@ import { Machine } from 'src/app/model/machine';
 import { BehaviorSubject, Subject, of } from 'rxjs';
 import { combineLatest, takeUntil, filter } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
+import { MachineType } from 'src/app/model/machine-type';
 
 @Component({
   selector: 'app-machine-overview',
@@ -26,6 +27,11 @@ export class MachineOverviewComponent implements OnInit {
 
   showDetail(machine: Machine) {
     this.showDetailMachine.emit(machine);
+  }
+  showDetailNoEl() {
+    let mt = new MachineType(1, "put operation here");
+    let newMachine = new Machine("put position here", mt);
+    this.showDetailMachine.emit(newMachine);
   }
 
 }

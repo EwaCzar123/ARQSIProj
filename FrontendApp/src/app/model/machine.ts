@@ -28,4 +28,11 @@ export class Machine {
         machine._id = json.id;
         return machine;
     }
+    toJSON(json: any) {
+        return {
+            id: this._id,
+            machineType: this.machineType.toJSON,
+            position: this.position
+        }
+    }
 }

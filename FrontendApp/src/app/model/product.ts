@@ -20,4 +20,11 @@ export class Product {
         product._id = json.id;
         return product;
     }
+
+    toJSON(json: any) {
+        return {
+            id: this._id,
+            description: this.description
+        }
+    }
 }

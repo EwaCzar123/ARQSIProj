@@ -19,7 +19,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { OperationDetailComponent } from './manage/operation-detail/operation-detail.component';
 import { ProductDetailComponent } from './manage/product-detail/product-detail.component';
 import { MachineTypeDetailComponent } from './manage/machine-type-detail/machine-type-detail.component';
-
+import { MatIconModule} from "@angular/material/icon"
 
 const appRoutes: Routes = [
   { 
@@ -47,7 +47,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   declarations: [
     AppComponent,
@@ -60,7 +61,7 @@ const appRoutes: Routes = [
     ProductOverviewComponent,
     OperationDetailComponent,
     ProductDetailComponent,
-    MachineTypeDetailComponent
+    MachineTypeDetailComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,6 +28,10 @@ export class MachineTypeOverviewComponent implements OnInit {
   showDetail(machineType: MachineType) {
     this.showDetailMachineType.emit(machineType);
   }
+  showDetailNoEl() {
+    let newMT = new MachineType(1, "put operation here");
+    this.showDetailMachineType.emit(newMT);
+  }
  
 
 }

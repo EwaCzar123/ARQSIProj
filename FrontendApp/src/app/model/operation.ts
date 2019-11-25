@@ -18,4 +18,10 @@ export class Operation {
         machine._id = json.id;
         return machine;
     }
+    toJSON(json: any) {
+        return {
+            id: this._id,
+            duration: this.duration,
+        }
+    }
 }

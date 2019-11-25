@@ -19,3 +19,11 @@
     text-align: center;
     border: solid 0.1em rgb(240, 237, 237);
 }
+
+.matIcon {
+    text-align: center;
+}
+
+.hover :hover {
+    background-color: rgb(219, 219, 219);
+}

@@ -34,4 +34,18 @@ export class ProductServiceService {
   getEnvironment(): string {
     return this.url;
   }
+
+  addProduct(machine: Product): Observable<Product> {
+    const body = {
+      id: machine.id,
+            duration: machine.description
+    };
+    console.log(machine.description);
+    return this.http.post<Product>(`${this.url}/product`, body).pipe(tap(r => {
+      this.machines.push(r);
+      this._machines$.next(this.machines);
+    }));
+  }
+
+
 }

@@ -36,6 +36,20 @@ export class MachineService {
     return this.url;
   }
 
+  addMachine(machine: Machine): Observable<Machine> {
+    const body = {
+      id: machine.id,
+      machine: machine.machineType.toJSON,
+      operation: machine.position
+    };
+    return this.http.post<Machine>(`${this.url}/machine`, body).pipe(tap(r => {
+      this.machines.push(r);
+      this._machines$.next(this.machines);
+    }));
+  }
+
+
+
  
 
 }

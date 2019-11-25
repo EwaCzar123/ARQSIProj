@@ -25,5 +25,9 @@ export class ProductOverviewComponent implements OnInit {
   showDetail(product: Product) {
     this.showDetailProduct.emit(product);
   }
+  showDetailNoEl() {
+    let newP = new Product("put description here");
+    this.showDetailProduct.emit(newP);
+  }
 
 }

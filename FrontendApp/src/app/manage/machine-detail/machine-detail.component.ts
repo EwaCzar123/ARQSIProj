@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Machine } from 'src/app/model/machine';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MachineService } from 'src/app/service/machine.service';
 
 @Component({
   selector: 'app-machine-detail',
@@ -12,7 +13,7 @@ export class MachineDetailComponent implements OnInit {
 
   @Input() machineDetail: Machine; 
 
-  constructor() { 
+  constructor(private machineService: MachineService) { 
     
   }
 
@@ -24,7 +25,14 @@ export class MachineDetailComponent implements OnInit {
   }
 
   onSubmit() {
+    if(this.machineDetail.id == undefined) {
+      let machinee = new Machine(this.machineFormGroup.value.position, this.machineFormGroup.value.machineType);
+    this.machineService.addMachine(machinee).subscribe(res => {
 
+    })
+    }
+    
+    
   }
 
 }
