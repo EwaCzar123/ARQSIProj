@@ -12,7 +12,7 @@ export class ProductDetailComponent implements OnInit {
 
   public productFormGroup: FormGroup;
 
-  @Input() productDetail: Product; 
+  @Input() productDetail: Product;
   
   constructor(private productService: ProductServiceService) { }
 

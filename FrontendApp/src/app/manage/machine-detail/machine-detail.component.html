@@ -7,16 +7,16 @@
             <p>
               <mat-form-field appearance="legacy" style="width: 100%;">
                 <p>position:</p>
-                <input matInput aria-label="title" value={{this.machineDetail.position}} type="tekst" formControlName="position" required
+                <input matInput aria-label="title" value={{this.position}} type="tekst" formControlName="position" required
                   style="width: 100%;">
               </mat-form-field>
               <mat-form-field appearance="legacy" style="width: 100%;">
               <p>machinetype:</p>
-                <input matInput aria-label="title" value={{this.machineDetail.machineType.id}} type="tekst" formControlName="machineType" required
+                <input matInput aria-label="title" value={{this.machineType}} type="tekst" formControlName="machineType" required
                   style="width: 100%;">
               </mat-form-field>
             </p>
-            <button style="float: right;">Save</button>
+            <button style="float: right;" data-cy="createMachine">Save</button>
           </div>
         </div>
       </div>

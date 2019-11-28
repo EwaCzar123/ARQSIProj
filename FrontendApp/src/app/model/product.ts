@@ -21,7 +21,7 @@ export class Product {
         return product;
     }
 
-    toJSON(json: any) {
+    toJSON() {
         return {
             id: this._id,
             description: this.description

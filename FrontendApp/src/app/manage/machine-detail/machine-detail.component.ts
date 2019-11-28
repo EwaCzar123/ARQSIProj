@@ -10,7 +10,6 @@ import { MachineService } from 'src/app/service/machine.service';
 })
 export class MachineDetailComponent implements OnInit {
   public machineFormGroup: FormGroup;
-
   @Input() machineDetail: Machine; 
 
   constructor(private machineService: MachineService) { 
@@ -31,8 +30,22 @@ export class MachineDetailComponent implements OnInit {
 
     })
     }
-    
-    
+  }
+
+  get position(): string {
+    if(this.machineDetail.position == undefined) {
+      return "put position here";
+    } else {
+      return this.machineDetail.position;
+    }
+  }
+  get machineType(): number {
+    if(this.machineDetail.machineType.id == undefined) {
+      return 1;
+    }
+    else {
+      return this.machineDetail.machineType.id;
+    }
   }
 
 }

@@ -25,7 +25,7 @@ export class MachineType {
         return machine;
     }
     
-    toJSON(json: any) {
+    toJSON() {
         return {
             id: this._id,
             machineId: this.machineId,

@@ -7,11 +7,11 @@
                   <p>
                     <mat-form-field appearance="legacy" style="width: 100%;">
                       <p>duration:</p>
-                      <input matInput aria-label="title" value={{this.operationDetail.duration}} type="tekst" formControlName="duration" required
+                      <input data-cy="duration" matInput aria-label="title" value={{this.operationDetail.duration}} type="tekst" formControlName="duration" required
                         style="width: 100%;">
                     </mat-form-field>
                   </p>
-                  <button style="float: right;">Save</button>
+                  <button data-cy="addOperation" style="float: right;">Save</button>
                 </div>
               </div>
             </div>
